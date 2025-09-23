@@ -24,11 +24,11 @@ app.get("/", (req,res) => {
 })
 
 // This handles the joke request
-app.get("/joke", async(req, res) => {
+app.post("/joke", async(req, res) => {
     const { name, category } = req.body;
 
     try{
-        const url = `https://v2.jokeapi.dev/joke/${category}?type=single?blacklistFlags=religious,political,racist,sexist`;
+        const url = `https://v2.jokeapi.dev/joke/${category}?type=single`;
         const response = await axios.get(url);
 
         // getting the joke from the data
@@ -40,10 +40,10 @@ app.get("/joke", async(req, res) => {
             joke = joke.replace("/Chuck Norris/gi", name);
         }
 
-        res.render("result", { name, category, joke });
+        res.render("results", { name, category, joke });
     } catch(error) {
         console.error(error);
-        res.render("result", {
+        res.render("results", {
             name, category, 
             joke: "Ah noooo! We couldn't find a joke. Try again please :)",
         });

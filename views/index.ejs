@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Joke Generator</title>
-    <link rel="stylesheet" href="../public/styles.css">
+  <title>Joke Generator</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>Get A Personalized Joke</h1>
+  <div class="form-container">
+    <h1>Get a Personalized Joke</h1>
     <form action="/joke" method="POST">
-        <label for="name">Your Name: </label>
-        <input type="text", id="name", name="name", placeholder="Enter Your Name">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" value="">
 
-        <label for="category">Category</label>
-        <select name="category" id="category">
-            <option value="Any">Any</option>
-            <option value="Programming">Programming</option>
-            <option value="Music">Music</option>
-            <option value="Dark">Dark</option>
-            <option value="Pun">Pun</option>
-        </select>
+      <label for="category">Category:</label>
+      <select id="category" name="category">
+        <option value="Any">Any</option>
+        <option value="Programming">Programming</option>
+        <option value="Misc">Misc</option>
+        <option value="Dark">Dark</option>
+        <option value="Pun">Pun</option>
+      </select>
 
-        <%# Using a button to sumbit information and get the joke %>
-        <button type="submit">Get Joke</button>
+      <button type="submit">Get Joke</button>
     </form>
+  </div>
+
+  <footer>
+    <p>⚠️ We are not responsible for offensive jokes. Viewer discretion is advised.</p>
+  </footer>
 </body>
 </html>

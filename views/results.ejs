@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Your Joke</title>
-        <link rel="stylesheet" href="../public/styles.css">
-    </head>
-    <body>
-        <h1>Here is Your Joke, <%=name || "Freind" %>!</h1>
-        <p><%= joke %></p>
+<head>
+  <title>Your Joke</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="result-box">
+    <h1>Here's Your Joke, <%= name || "Friend" %>!</h1>
+    <p><%= joke %></p>
 
-        <a href="/">Get Another Joke</a>
-    </body>
+    <a href="/">Reinput information for another joke.</a>
+  </div>
+
+  <footer>
+    <p>⚠️ We are not responsible for offensive jokes. Viewer discretion is advised.</p>
+  </footer>
+</body>
 </html>
