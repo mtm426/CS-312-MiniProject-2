@@ -25,22 +25,21 @@ app.get("/", (req,res) => {
 
 // This handles the joke request
 app.post("/joke", async(req, res) => {
-    const { name, category } = req.body;
-
-    try{
-        const url = `https://v2.jokeapi.dev/joke/${category}?type=single`;
-        const response = await axios.get(url);
-
-        // getting the joke from the data
-        let joke = response.data.joke
-
-        // if they typed in a name
-        if(name){
-            // replace chuck norris, all occasions and not case sensitive with their name
-            joke = joke.replace("/Chuck Norris/gi", name);
-        }
-
-        res.render("results", { name, category, joke });
+    
+    // Creating variable for input or non input result in Friend
+    const name = req.body.name || "Friend";
+    
+    try {
+    
+        // Call JokeAPI for a random joke
+        const response = await fetch("https://v2.jokeapi.dev/joke/Any?type=single");
+        const data = await response.json();
+    
+        // Creating a variable for the joke we get
+        let joke = data.joke;
+    
+        // Giving results.ejs file this data...
+        res.render("results", { joke, name });
     } catch(error) {
         console.error(error);
         res.render("results", {
