@@ -6,7 +6,9 @@
 </head>
 <body>
   <div class="result-box">
+    <%# This is where the "customization" comes in %>
     <h1>Here's Your Joke, <%= name || "Friend" %>!</h1>
+    <%# Give them the joke %>
     <p><%= joke %></p>
 
     <%# Sending back to home page if this is clicked to reinput information %>
