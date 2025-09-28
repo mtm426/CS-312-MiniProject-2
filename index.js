@@ -28,6 +28,7 @@ app.post("/joke", async(req, res) => {
     
     // Creating variable for input or non input result in Friend
     const name = req.body.name || "Friend";
+    const category = req.body.category || "Any";
     
     try {
     
