@@ -32,7 +32,7 @@ app.post("/joke", async(req, res) => {
     try {
     
         // Call JokeAPI for a random joke
-        const response = await fetch("https://v2.jokeapi.dev/joke/${category}?type=single");
+        const response = await fetch(`https://v2.jokeapi.dev/joke/${category}?type=single`);
         const data = await response.json();
     
         // Creating a variable for the joke we get
